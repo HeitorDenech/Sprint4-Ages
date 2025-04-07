@@ -17,6 +17,6 @@ model User {
   password      String
   level         Int
   profile_img   String
-  createdAt     timestamp
+  createdAt     DateTime  @default(now()) @db.Timestamptz(3)
   deletedAt     timestamp
 }
