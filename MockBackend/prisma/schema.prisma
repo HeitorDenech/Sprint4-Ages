@@ -10,11 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Filmes {
-  id      String  @id @default(uuid())
-  nome    String
-  autor   String
-  data    DateTime
-  genero  String
+model User {
+  id            Int @default(autoincrement()) @unique
+  name          String
+  email         String
+  password      String
+  level         Int
+  profile_img   String
+  createdAt     timestamp
+  deletedAt     timestamp
 }
-git init
