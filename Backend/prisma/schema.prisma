@@ -21,6 +21,6 @@ model User {
   password String
   level    Int
   profile_img String
-  createdAt timestamp
-  deletedAt timestamp
+  createdAt DateTime @default(now())
+  deletedAt DateTime
 }
