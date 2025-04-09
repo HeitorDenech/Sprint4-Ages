@@ -270,10 +270,10 @@ A pasta `MockBackend` usa o [`json-server`](https://github.com/typicode/json-ser
 
 📌 Configuração Inicial
 
-- [ ] Estrutura do projeto com NestJS
-- [ ] Configuração do Prisma + PostgreSQL
-- [ ] Docker para ambiente local
-- [ ] Modelagem de `User` e `Room`
+-  ✅ Estrutura do projeto com NestJS
+-  ✅ Configuração do Prisma + PostgreSQL
+-  ✅ Docker para ambiente local
+-  ✅ Modelagem de `User` e `Room`
 - [ ] Hash de senha segura
 
 
