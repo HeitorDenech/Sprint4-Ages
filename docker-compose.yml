@@ -1,33 +1,14 @@
-# docker-compose.yml
-
-
 version: '3.8'
-
 services:
-
-
-  postgres:
-
+  dev-db:
     image: postgres:13.5
-
-    restart: always
-
-    environment:
-
-      - POSTGRES_USER=myuser
-
-      - POSTGRES_PASSWORD=mypassword
-
-    volumes:
-
-      - postgres:/var/lib/postgresql/data
-
     ports:
-
       - '5432:5432'
-
-
-volumes:
-
-  postgres:
-
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - dev-net
+networks:
+  dev-net:
