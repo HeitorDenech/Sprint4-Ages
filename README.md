@@ -281,7 +281,7 @@ A pasta `MockBackend` usa o [`json-server`](https://github.com/typicode/json-ser
 
 - [ ] Rotas, serviços, repositórios
 - [ ] Middleware de autorização por `level`
-- [ ] Validações com `class-validator`
+-  ✅ Validações com `class-validator`
 
 
 📌 CRUD de Sala
