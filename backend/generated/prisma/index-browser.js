@@ -111,6 +111,9 @@ Prisma.NullTypes = {
  */
 
 exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
   Serializable: 'Serializable'
 });
 
@@ -122,11 +125,13 @@ exports.Prisma.UserScalarFieldEnum = {
   level: 'level',
   profile_img: 'profile_img',
   createdAt: 'createdAt',
-  deletedAt: 'deletedAt'
+  updatedAt: 'updatedAt'
 };
 
-exports.Prisma.SalasScalarFieldEnum = {
+exports.Prisma.RoomScalarFieldEnum = {
   id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   description: 'description',
   acessLevel: 'acessLevel'
 };
@@ -136,10 +141,15 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Salas: 'Salas'
+  Room: 'Room'
 };
 
 /**
