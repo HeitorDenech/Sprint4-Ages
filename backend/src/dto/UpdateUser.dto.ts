@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsNumber, Min, Max, IsNotEmpty } from 'class-validator';
+import { IsString, IsNumber, Min, Max } from 'class-validator';
 
 export class UpdateUser 
 {
