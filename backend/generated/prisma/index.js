@@ -125,7 +125,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/u24105104/sprint-4-AGES/Sprint4-Ages/backend/generated/prisma",
+      "value": "/home/u24103314/Sprint 4 3.0/Sprint4-Ages/backend/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -139,7 +139,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/u24105104/sprint-4-AGES/Sprint4-Ages/backend/prisma/schema.prisma",
+    "sourceFilePath": "/home/u24103314/Sprint 4 3.0/Sprint4-Ages/backend/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -151,8 +151,8 @@ const config = {
   "datasourceNames": [
     "db"
   ],
-  "activeProvider": "sqlite",
-  "postinstall": false,
+  "activeProvider": "postgresql",
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
