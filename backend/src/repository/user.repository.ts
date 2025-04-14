@@ -1,15 +1,23 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { CreateUserDto } from '../dto/CreateUser.dto';
 import { UpdateUserDto } from '../dto/UpdateUser.dto';
 ///////////////////////////////////////////////////////////////////////////////
 
 @Injectable()
 export class UserRepository {
-  constructor(private readonly prisma: PrismaService) { }
+  constructor(private readonly prisma: PrismaService) {}
 
   create(data: CreateUserDto) {
-    return this.prisma.user.create({data});
+    return this.prisma.user.create({
+      data: {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        level: data.level,
+        profile_img: 'default.jpg', // valor padrão se não vier no DTO
+      },
+    });
   }
 
   findAll() {
@@ -28,3 +36,4 @@ export class UserRepository {
     return this.prisma.user.delete({ where: { id } });
   }
 }
+

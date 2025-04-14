@@ -24,19 +24,19 @@ export class UserController
     }
 
     @Get(':id')
-    findOne(@Param('id') id: string)
+    findOne(@Param('id') id: number)
     {
-        return `This action returns a #${id} user`;
+        return this.userService.findOne(id);
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() updateUser: UpdateUserDto)
+    update(@Param('id') id: number, @Body() updateUser: UpdateUserDto)
     {
-        return `This action updates a #${id} user`;
+        return this.userService.update(id, updateUser);
     }
 
     @Delete(':id')
-    remove(@Param('id') id:string)
+    remove(@Param('id') id: number)
     {
         return this.userService.delete(id);
     }

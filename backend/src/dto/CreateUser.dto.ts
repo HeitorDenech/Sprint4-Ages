@@ -1,18 +1,22 @@
 import { IsString, Min, Max, IsNumber } from 'class-validator';
+///////////////////////////////////////////////////////////////////////////////
 
-export class CreateUserDto
-{
+export class CreateUserDto {
     @IsString()
     name: string;
-
+  
     @IsString()
     email: string;
-    
+  
     @IsString()
     password: string;
-
-    @IsNumber()    
+  
+    @IsNumber()
     @Min(1)
     @Max(5)
-    acessLevel: number;
-}
+    level: number;
+  
+    @IsString()
+    profile_img?: string; // torna opcional
+  }
+  
