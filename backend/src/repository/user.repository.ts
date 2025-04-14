@@ -9,11 +9,11 @@ export class UserRepository {
   constructor(private readonly prisma: PrismaService) { }
 
   create(data: CreateUserDto) {
-    return this.prisma.
+    return this.prisma.user.create({data});
   }
 
   findAll() {
-    return this.prisma.place.findMany();
+    return this.prisma.user.findMany();
   }
 
   findOne(id: number) {
@@ -21,10 +21,10 @@ export class UserRepository {
   }
 
   update(id: number, data: UpdateUserDto) {
-    return this.prisma.place.update({ where: { id }, data });
+    return this.prisma.user.update({ where: { id }, data });
   }
 
   remove(id: number) {
-    return this.prisma.place.delete({ where: { id } });
+    return this.prisma.user.delete({ where: { id } });
   }
 }

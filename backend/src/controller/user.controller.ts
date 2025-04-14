@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
-import { CreateUser } from "../dto/CreateUser.dto";
-import { UpdateUser } from "../dto/UpdateUser.dto";
+import { CreateUserDto } from "../dto/CreateUser.dto";
+import { UpdateUserDto } from "../dto/UpdateUser.dto";
 import { User } from "../interfaces/user.interface"
 import { UserService } from "../services/user.service";
 ///////////////////////////////////////////////////////////////////////////////
@@ -12,10 +12,9 @@ export class UserController
 
 
     @Post()
-    async create(@Body() createUserDto: CreateUser)
+    async create(@Body() createUserDto: CreateUserDto)
     {
         this.userService.create(createUserDto);
-        return 'This action adds a net user';
     }
 
     @Get()
@@ -31,7 +30,7 @@ export class UserController
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() updateUser: UpdateUser)
+    update(@Param('id') id: string, @Body() updateUser: UpdateUserDto)
     {
         return `This action updates a #${id} user`;
     }
