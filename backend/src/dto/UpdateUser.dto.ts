@@ -1,6 +1,6 @@
 import { IsString, IsNumber, Min, Max } from 'class-validator';
 
-export class UpdateUser 
+export class UpdateUserDto
 {
   @IsString()
   name: string;
