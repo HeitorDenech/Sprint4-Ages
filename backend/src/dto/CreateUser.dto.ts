@@ -1,6 +1,6 @@
-import { IsString, Min, Max } from 'class-validator';
+import { IsString, Min, Max, IsNumber } from 'class-validator';
 
-export class User
+export class CreateUser
 {
     @IsString()
     name: string;
@@ -11,6 +11,7 @@ export class User
     @IsString()
     password: string;
 
+    @IsNumber()    
     @Min(1)
     @Max(5)
     acessLevel: number;
