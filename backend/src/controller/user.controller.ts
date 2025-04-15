@@ -12,13 +12,13 @@ export class UserController
 
 
     @Post()
-    async create(@Body() createUserDto: CreateUserDto)
+    create(@Body() createUserDto: CreateUserDto)
     {
-        this.userService.create(createUserDto);
+        return this.userService.create(createUserDto);
     }
 
     @Get()
-    async findAll(): Promise<User[]>
+    findAll()
     {
         return this.userService.findAll();
     }
