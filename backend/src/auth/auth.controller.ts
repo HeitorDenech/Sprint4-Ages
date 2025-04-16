@@ -1,17 +1,22 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Body, ValidationPipe, UseGuards, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { AuthGuard } from '@nestjs/passport';
+import { CreateUserDto } from '../dto/CreateUser.dto';
+ 
 
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @Post('login')
-  login() {
-    return this.authService.login();
+  @UseGuards(AuthGuard("local"))
+  @Post("login")
+  async login(@Request() req)
+  {
+    return this.authService.login(req.user);
   }
 
-  @Post('signin')
-  signin() {
-    return this.authService.signin();
+  @Post("register")
+  async register(@Body(new ValidationPipe()) createUserDto: CreateUserDto) {
+    throw new  Error('Implementar ainda');
   }
 }
